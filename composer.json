@@ -28,6 +28,11 @@
   "extra": {
     "branch-alias": {
       "dev-master": "v1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Rapid\\OAS\\Providers\\ServiceProvider"
+      ]
     }
   },
   "minimum-stability": "dev",
