@@ -15,9 +15,9 @@
   "require": {
     "php": ">=7.1.3",
     "cebe/php-openapi": "^1.2",
-    "illuminate/database": "~5.0|~6.0",
-    "illuminate/support": "~5.0|~6.0",
-    "illuminate/validation": "~5.0|~6.0",
+    "illuminate/database": "~5.0|~6.0|~7.0",
+    "illuminate/support": "~5.0|~6.0|~7.0",
+    "illuminate/validation": "~5.0|~6.0|~7.0",
     "symfony/yaml": "^4.3"
   },
   "autoload": {
@@ -28,6 +28,11 @@
   "extra": {
     "branch-alias": {
       "dev-master": "v1.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Rapid\\OAS\\Providers\\ServiceProvider"
+      ]
     }
   },
   "minimum-stability": "dev",

@@ -2,11 +2,11 @@
 
 namespace Rapid\OAS\Providers;
 
-use Rapid\OAS\OpenApi;
+use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Illuminate\Support\Str;
 use Rapid\OAS\Console\Commands\YamlGenerator;
 use Rapid\OAS\Http\Controllers\DocsController;
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
+use Rapid\OAS\OpenApi;
 
 class ServiceProvider extends IlluminateServiceProvider
 {
@@ -48,7 +48,7 @@ class ServiceProvider extends IlluminateServiceProvider
         $router->group([
             'middleware' => config('oas.route.middleware', []),
         ], function () use ($router) {
-            $router->get($this->getPath(), '\\'.DocsController::class.'@docs');
+            $router->get($this->getPath(), '\\' . DocsController::class . '@docs');
         });
     }
 
@@ -68,9 +68,9 @@ class ServiceProvider extends IlluminateServiceProvider
     protected function getPath()
     {
         return '/'
-            .\ltrim(config('oas.route.prefix', ''), '/')
-            .'/'
-            .\ltrim(config('oas.route.path', 'docs'), '/');
+            . \ltrim(config('oas.route.prefix', ''), '/')
+            . '/'
+            . \ltrim(config('oas.route.path', 'docs'), '/');
     }
 
     /**
@@ -90,6 +90,6 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     protected function configPath()
     {
-        return __DIR__.'/../../config/oas.php';
+        return __DIR__ . '/../../config/oas.php';
     }
 }
